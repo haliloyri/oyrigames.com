@@ -26,7 +26,8 @@ export const games = [
     short: ['Dünya, bir dokunuş uzağında.', 'The world is a tap away.'],
     description: ['Haritaya dokun, ülkeleri ve başkentleri keşfet. Günlük rotanı tamamla, pasaportunu damgalarla doldur ve aynı telefonda arkadaşına meydan oku.', 'Tap the map, discover countries and capitals. Complete your daily route, fill your passport with stamps, and challenge a friend on the same phone.'],
     art: 'mapbop-keyart.webp', icon: 'mapbop-icon.webp',
-    screens: [['mapbop-home.webp','Keşfe başla','Start exploring'],['mapbop-play.webp','Haritada yerini bul','Find it on the map'],['mapbop-race.webp','Bir arkadaşına meydan oku','Challenge a friend'],['mapbop-passport.webp','Pasaportunu doldur','Fill your passport'],['mapbop-flags.webp','Ülkeleri keşfet','Discover the countries'],['mapbop-feedback.webp','Her tahminden öğren','Learn from every guess']],
+    screenshotSize: [1206, 2622], screenshotLanguage: 'tr', screenshotArchive: 'mapbop-screenshots-tr.zip',
+    screens: [['mapbop-home.webp','Keşfe başla','Start exploring'],['mapbop-play.webp','Ülkeleri haritada tanı','Meet countries on the map'],['mapbop-race.webp','Birlikte yarışa hazırlan','Set up a race together'],['mapbop-passport.webp','Keşiflerini pasaportunda takip et','Track discoveries in your passport'],['mapbop-worlds.webp','Dünyaları keşfet','Explore the worlds'],['mapbop-levels.webp','Bölge ve seviyeni seç','Choose a region and level'],['mapbop-settings.webp','Oyunu kendine göre ayarla','Make the game your own']],
     stores: {apple: null, google: null, steam: null},
     features: [
       ['01','Ezberleme, keşfet.','Discover as you play.','Ülkeler ve başkentlerle tanış. Kolaydan zora ilerleyen harita sorularında konumları dokunarak öğren.','Meet countries and capitals. Learn their locations by tapping through map challenges that grow with you.'],

@@ -50,7 +50,7 @@ Destek adresi önerisi olarak `support@oyrigames.com` kullanıldı. Bu görev e-
 
 Mağaza adresleri doğrulanmadığından `null` tutulur ve ziyaretçiye “bağlantı yakında” durumu gösterilir. `stores.apple` ve `stores.google` doldurulduğunda gerçek bağlantı görünür. Steam bağlantısı veya yeni PC oyunu eklendiğinde platform kartı, filtre ve ilgili sayfa içeriği de güncellenmelidir. Henüz duyurulmayan bir Steam sürümü varmış gibi gösterilmez.
 
-WhereIsIt klasöründeki güncel `mobile/app.json`, README ve mağaza listesi **MapBop** markasını kullanır. URL proje adıyla korunmuştur; eski ekran görüntülerindeki WhereIsIt adı sayfada açıklanır.
+WhereIsIt klasöründeki güncel `mobile/app.json`, README ve mağaza listesi **MapBop** markasını kullanır. URL proje adıyla korunmuştur; güncel simülatör ekranları MapBop adını gösterir.
 
 Gizlilik sayfaları, yayıncının bildirdiği mağaza sürümü planını temel alır: hesap/giriş, bulut kayıt ve ayrı oyun analitiği yok; reklam var. Reklam/mağaza verileri yerel oyun kayıtlarından ayrıdır. Her iki oyunda uygulama içi satın alma ve abonelik bulunacak; genel kitle hedefleniyor ve özellikle çocuklar için tasarlanmıyor. Destek yazışmaları ve silme talebi kayıtları, talep kapandıktan sonra en fazla 12 ay saklanır; yasal kayıt yükümlülükleri hariçtir. Metinler mağaza onayı alındığı iddiası değildir.
 
@@ -66,7 +66,7 @@ Başvurular:
 ## Görsel kaynakları
 
 `PixelHeist/assets/lobby/v2/museum_crew.png` tanıtım görseli, `assets/app_icon/` simgesi ve `artifacts/validation/` içindeki mevcut soygun, müze ve ana ekran görüntüleri kullanıldı.
-`WhereIsIt/mobile/assets/images/level-island.png`, uygulama simgesi ve `WhereIsIt/store/screenshots/en/` ekranları kullanıldı.
+`WhereIsIt/mobile/assets/images/level-island.png` ve uygulama simgesi kullanıldı. MapBop ekranları 18 Ekim 2026 tarihinde açık iPhone 17 Pro simülatöründen alındı: ana, oynanış/bilgi kartı, yarış, pasaport, dünyalar, seviyeler ve ayarlar. Türkçe sürümden alınan yedi ekran, her iki site dilinde de dil bilgisi açıklamasıyla gösterilir. WebP sürümleri tam 1206 × 2622 çözünürlükte optimize edilmiştir; basın sayfasındaki ZIP özgün PNG dosyalarını içerir.
 Kaynak oyun depolarının lisansları ve üçüncü taraf hakları geçerlidir.
 
 ## Kontroller
@@ -75,7 +75,7 @@ Kaynak oyun depolarının lisansları ve üçüncü taraf hakları geçerlidir.
 
 ## Oyun sayfaları — 18 Ekim 2026
 
-Her oyun sayfasında altı büyütülebilir ekran görüntüsü, iki görsel anlatım bölümü, üç adımlı oynanış açıklaması ve bölüm bağlantıları bulunur. Destek sayfaları kayıt, satın alma ve hata bildirimi konularında rehberlik sunar. Ek kaynaklar: `src/game-details.mjs`.
+Pixel Heist sayfasında altı, MapBop sayfasında yedi büyütülebilir ekran görüntüsü, iki görsel anlatım bölümü, üç adımlı oynanış açıklaması ve bölüm bağlantıları bulunur. Destek sayfaları kayıt, satın alma ve hata bildirimi konularında rehberlik sunar. Ek kaynaklar: `src/game-details.mjs`.
 
 App Store için tüm uygulamalarda **Support URL** ve **Privacy Policy URL** gereklidir. `/{oyun}/support/` ve `/{oyun}/privacy/` bu amaçla hazırlanmıştır. Pazarlama URL’si oyun ana sayfasıdır. Gizlilik tercihleri ve veri silme sayfaları ayrıca sunulur; hepsi her uygulama için zorunlu alanlar değildir. Hesap oluşturma eklenirse yalnızca web sayfası yeterli olmaz; Apple uygulama içinde hesap silmeyi başlatma olanağı ister. Kaynak: https://developer.apple.com/support/offering-account-deletion-in-your-app/
 
@@ -102,7 +102,7 @@ Beceri aramasındaki siyah-beyaz/hareket yoğun öneri, resimli oyun dünyaları
 - Başlıklar yerel Bricolage Grotesque, gövde metinleri yerel DM Sans. OFL lisansları `assets/fonts/` içinde tutulur.
 - Ana odak: iki oyunun kapakları. Metinler, düğmeler ve kaynak bağlantıları bu odağa göre sade tutulur.
 - Ana sayfa düzeni: solda kısa tanıtım, sağda iki oyun kapağı; aşağıda oyun koleksiyonu, stüdyo ve yardım bağlantıları.
-- Oyun sayfaları: oyun kimliği ve kapak; oynanış/görsel anlatım; altı ekran; SSS ve oyuncu kaynakları.
+- Oyun sayfaları: oyun kimliği ve kapak; oynanış/görsel anlatım; ekran galerisi; SSS ve oyuncu kaynakları.
 - Stüdyo: iki oyun dünyasının kolajı, oyun yaklaşımı ve mevcut oyunlar.
 - Destek/gizlilik: açık iletişim, okunabilir satır genişliği ve oyunlara özel kaynaklar.
 

@@ -38,7 +38,7 @@ for (const route of routes) {
 }
 for (const game of games) {
  const html=await readFile(`${root}/${game.id}/index.html`,'utf8');
- if((html.match(/class="shot"/g)||[]).length!==6)errors.push(`${game.id}: expected six screenshots`);
+ if((html.match(/class="shot"/g)||[]).length!==game.screens.length)errors.push(`${game.id}: expected ${game.screens.length} screenshots`);
  for(const section of ['overview','screenshots','how-to-play'])if(!html.includes(`id="${section}"`))errors.push(`${game.id}: missing game section ${section}`);
  for(const page of ['support','contact','privacy','privacy-choices','delete-data','terms'])if(!html.includes(`href="/${game.id}/${page}/"`))errors.push(`${game.id}: missing ${page} resource`);
 }
