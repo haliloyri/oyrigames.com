@@ -32,7 +32,7 @@ Varsayılan dil İngilizcedir ve kök dizinde sunulur. Türkçe `/tr/` altındad
 | --- | --- |
 | Ana sayfa | `/` |
 | Pixel Heist | `/pixelheist/` |
-| MapBop (WhereIsIt) | `/whereisit/` |
+| MapBop | `/mapbop/` |
 | Stüdyo | `/about/` |
 | Basın ve indirmeler | `/press/` |
 | Destek merkezi | `/support/` |
@@ -50,7 +50,7 @@ Destek adresi önerisi olarak `support@oyrigames.com` kullanıldı. Bu görev e-
 
 Mağaza adresleri doğrulanmadığından `null` tutulur ve ziyaretçiye “bağlantı yakında” durumu gösterilir. `stores.apple` ve `stores.google` doldurulduğunda gerçek bağlantı görünür. Steam bağlantısı veya yeni PC oyunu eklendiğinde platform kartı, filtre ve ilgili sayfa içeriği de güncellenmelidir. Henüz duyurulmayan bir Steam sürümü varmış gibi gösterilmez.
 
-WhereIsIt klasöründeki güncel `mobile/app.json`, README ve mağaza listesi **MapBop** markasını kullanır. URL proje adıyla korunmuştur; güncel simülatör ekranları MapBop adını gösterir.
+Oyunun adı **MapBop**, İngilizce adresi `/mapbop/`, Türkçe adresi `/tr/mapbop/` şeklindedir. Destek, iletişim ve politika sayfaları da bu klasörün altındadır. Önceki `/whereisit/`, `/tr/whereisit/` ve `/en/whereisit/` adresleri ilgili yeni sayfalara yönlenir. Güncel simülatör ekranları MapBop adını gösterir.
 
 Gizlilik sayfaları, yayıncının bildirdiği mağaza sürümü planını temel alır: hesap/giriş, bulut kayıt ve ayrı oyun analitiği yok; reklam var. Reklam/mağaza verileri yerel oyun kayıtlarından ayrıdır. Her iki oyunda uygulama içi satın alma ve abonelik bulunacak; genel kitle hedefleniyor ve özellikle çocuklar için tasarlanmıyor. Destek yazışmaları ve silme talebi kayıtları, talep kapandıktan sonra en fazla 12 ay saklanır; yasal kayıt yükümlülükleri hariçtir. Metinler mağaza onayı alındığı iddiası değildir.
 
@@ -65,7 +65,7 @@ Başvurular:
 
 ## Görsel kaynakları
 
-`PixelHeist/assets/lobby/v2/museum_crew.png` tanıtım görseli, `assets/app_icon/` simgesi ve `artifacts/validation/` içindeki mevcut soygun, müze ve ana ekran görüntüleri kullanıldı.
+`PixelHeist/assets/lobby/v2/museum_crew.png` tanıtım görseli ve `assets/app_icon/` simgesi kullanıldı. Pixel Heist’in altı ekranı 18 Ekim 2026 tarihinde Godot 4.7.1 ile güncel oyun sahnelerinden yeniden alındı: aktif soygun, özel koleksiyon, Safehouse, açılış hikâyesi, eser detayı ve robot ekibi. Her iki site dilinde İngilizce oyun içeriğini gösteren 780 × 1688 WebP dosyaları kullanılır; ekranlar kırpılmadı ve yeniden boyutlandırılmadı. Çekim ayrı geçici kayıtla yapıldı; oyuncunun kaydına dokunulmadı. Özgün PNG dosyaları ve kaynak kayıtları `artifacts/pixelheist-godot-2026-10-18/` altında tutulur.
 `WhereIsIt/mobile/assets/images/level-island.png` ve uygulama simgesi kullanıldı. MapBop ekranları 18 Ekim 2026 tarihinde açık iPhone 17 Pro simülatöründen alındı: ana, oynanış/bilgi kartı, yarış, pasaport, dünyalar, seviyeler ve ayarlar. Türkçe sürümden alınan yedi ekran, her iki site dilinde de dil bilgisi açıklamasıyla gösterilir. WebP sürümleri tam 1206 × 2622 çözünürlükte optimize edilmiştir; basın sayfasındaki ZIP özgün PNG dosyalarını içerir.
 Kaynak oyun depolarının lisansları ve üçüncü taraf hakları geçerlidir.
 
@@ -85,10 +85,10 @@ App Store için tüm uygulamalarda **Support URL** ve **Privacy Policy URL** ger
 
 | Alan | Pixel Heist | MapBop |
 | --- | --- | --- |
-| Marketing URL | `/pixelheist/` | `/whereisit/` |
-| Support URL | `/pixelheist/support/` | `/whereisit/support/` |
-| Privacy Policy URL | `/pixelheist/privacy/` | `/whereisit/privacy/` |
-| User Privacy Choices URL (isteğe bağlı) | `/pixelheist/privacy-choices/` | `/whereisit/privacy-choices/` |
+| Marketing URL | `/pixelheist/` | `/mapbop/` |
+| Support URL | `/pixelheist/support/` | `/mapbop/support/` |
+| Privacy Policy URL | `/pixelheist/privacy/` | `/mapbop/privacy/` |
+| User Privacy Choices URL (isteğe bağlı) | `/pixelheist/privacy-choices/` | `/mapbop/privacy-choices/` |
 
 Türkçe yerelleştirme için bu adreslere `/tr` öneki eklenir. Mağazaya girilirken tüm adresler halka açık gerçek site origin’i ile birleştirilmelidir.
 
@@ -132,13 +132,13 @@ Kontrol edilen ana renk çiftleri 4.5:1 metin kontrastını geçer. Hareket azal
 
 | Amaç | Pixel Heist | MapBop |
 | --- | --- | --- |
-| Support URL (App Store) | `/pixelheist/support/` | `/whereisit/support/` |
-| Geliştirici iletişim | `/pixelheist/contact/` | `/whereisit/contact/` |
-| Privacy Policy URL (her iki mağaza) | `/pixelheist/privacy/` | `/whereisit/privacy/` |
-| User Privacy Choices (Apple’da isteğe bağlı) | `/pixelheist/privacy-choices/` | `/whereisit/privacy-choices/` |
-| Veri silme açıklamaları | `/pixelheist/delete-data/` | `/whereisit/delete-data/` |
-| Kullanım/satın alma bilgileri | `/pixelheist/terms/` | `/whereisit/terms/` |
-| Marketing URL | `/pixelheist/` | `/whereisit/` |
+| Support URL (App Store) | `/pixelheist/support/` | `/mapbop/support/` |
+| Geliştirici iletişim | `/pixelheist/contact/` | `/mapbop/contact/` |
+| Privacy Policy URL (her iki mağaza) | `/pixelheist/privacy/` | `/mapbop/privacy/` |
+| User Privacy Choices (Apple’da isteğe bağlı) | `/pixelheist/privacy-choices/` | `/mapbop/privacy-choices/` |
+| Veri silme açıklamaları | `/pixelheist/delete-data/` | `/mapbop/delete-data/` |
+| Kullanım/satın alma bilgileri | `/pixelheist/terms/` | `/mapbop/terms/` |
+| Marketing URL | `/pixelheist/` | `/mapbop/` |
 
 Tablodaki yolların kalıcı alan adı `https://oyrigames.com` olacaktır. Genel geliştirici iletişimi `/contact/` adresindedir. Destek/gizlilik sayfaları oyun adını ve e-posta adresini içerir.
 E-posta bağlantıları yalnızca kullanıcının posta uygulamasını açar; bir talebin gönderildiği veya verinin silindiği iddia edilmez.

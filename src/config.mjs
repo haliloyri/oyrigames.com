@@ -9,6 +9,7 @@ export const games = [
     short: ['Her pikselin bir planı var.', 'Every pixel has a plan.'],
     description: ['Küçük dronlar, büyük bir soygun. Renkleri eşleştir, doğru sırayı bul ve sanat eserlerini piksel piksel koleksiyonuna kat.', 'Tiny drones. One ambitious heist. Match colors, find the right sequence, and collect works of art one pixel at a time.'],
     art: 'pixelheist-keyart.webp', icon: 'pixelheist-icon.webp',
+    screenshotSize: [780, 1688], screenshotLanguage: 'en',
     screens: [['pixelheist-play.webp','Soygun başlasın','The heist begins'],['pixelheist-gallery.webp','Kendi sanat galeriniz','Your own art gallery'],['pixelheist-home.webp','Bir sonraki görev','Your next mission'],['pixelheist-story.webp','Soygunun arkasındaki hikâye','The story behind the heist'],['pixelheist-detail.webp','Sanata yakından bak','A closer look at the art'],['pixelheist-crew.webp','Robot ekibinle tanış','Meet your robotic crew']],
     stores: {apple: null, google: null, steam: null},
     features: [
@@ -22,7 +23,7 @@ export const games = [
       ['Nereden indirebilirim?','Where can I download it?','Mağaza bağlantıları henüz duyurulmadı. Resmî bağlantılar hazır olduğunda bu sayfaya eklenecek.','Store links have not been announced yet. Official links will be added here when available.']
     ]
   },
-  { id: 'whereisit', name: 'MapBop', alias: 'WhereIsIt', color: '#78d8c8', genre: ['Coğrafya · Keşif · Bilgi', 'Geography · Discovery · Quiz'],
+  { id: 'mapbop', name: 'MapBop', color: '#78d8c8', genre: ['Coğrafya · Keşif · Bilgi', 'Geography · Discovery · Quiz'],
     short: ['Dünya, bir dokunuş uzağında.', 'The world is a tap away.'],
     description: ['Haritaya dokun, ülkeleri ve başkentleri keşfet. Günlük rotanı tamamla, pasaportunu damgalarla doldur ve aynı telefonda arkadaşına meydan oku.', 'Tap the map, discover countries and capitals. Complete your daily route, fill your passport with stamps, and challenge a friend on the same phone.'],
     art: 'mapbop-keyart.webp', icon: 'mapbop-icon.webp',
@@ -35,7 +36,6 @@ export const games = [
       ['03','Aynı telefon, tatlı rekabet.','One phone. Friendly rivalry.','Arkadaşınla aynı cihazda yarış. Harita bilginizi karşılaştırın ve bir sonraki keşfi birlikte yapın.','Race a friend on the same device. Put your map knowledge to the test and make your next discovery together.']
     ],
     faqs: [
-      ['WhereIsIt ile MapBop aynı oyun mu?','Are WhereIsIt and MapBop the same game?','Evet. WhereIsIt proje adı; güncel oyun ve mağaza markası MapBop: Geography Game. Bu sayfa her iki adla ilgili bilgileri içerir.','Yes. WhereIsIt is the project name. The current game and store brand is MapBop: Geography Game. This page covers both names.'],
       ['Hesap açmam gerekiyor mu?','Do I need an account?','Hayır. İlerleme, ayarlar ve yarış geçmişi cihazında saklanır. Yarış için yazdığın oyuncu adları da cihazında kalır.','No. Your progress, settings, and race history stay on your device, as do the player names entered for a race.'],
       ['Mağazada ne zaman olacak?','When will it be in stores?','Kesin çıkış tarihi henüz duyurulmadı. App Store ve Google Play bağlantıları hazır olduğunda burada paylaşılacak.','A release date has not been announced. App Store and Google Play links will appear here when ready.']
     ]

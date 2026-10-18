@@ -14,7 +14,7 @@ const details={
    ['Eseri tamamla.','Complete the artwork.','Son piksele kadar doğru sırayı koru. Tamamlanan eseri galerinde incele ve bir sonraki göreve geç.','Keep your sequence working until the final pixel. Explore the completed piece in your gallery, then take on the next mission.']
   ]
  },
- whereisit:{
+ mapbop:{
   intro:['Bir sonraki keşfin haritada seni bekliyor.','Your next discovery is on the map.'],
   summary:['Bir ülkenin adını bilmek başka, haritada yerini bulmak başka. MapBop kısa harita meydan okumalarını günlük bir keşif alışkanlığına dönüştürür. Tanış, dene, tekrar et; dünyayı adım adım öğren.','Knowing a country’s name is one thing. Finding it on a map is another. MapBop turns short map challenges into a daily habit of discovery. Meet, try, and revisit as the world becomes more familiar.'],
   stories:[

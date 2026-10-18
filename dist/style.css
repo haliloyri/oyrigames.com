@@ -104,7 +104,7 @@ section[id], h2[id] { scroll-margin-top: 28px; }
 .game-card { min-width: 0; }
 .game-card-picture { position: relative; display: block; aspect-ratio: 1.45; overflow: hidden; border-radius: 16px; background: #cbe7e8; }
 .game-card-picture img { width: 100%; height: 100%; object-position: center 32%; transition: transform 400ms var(--ease); }
-.game-card-picture.whereisit img { object-position: center; }
+.game-card-picture.mapbop img { object-position: center; }
 .game-card-picture:hover img { transform: scale(1.035); }
 .card-open { position: absolute; right: 18px; bottom: 18px; width: 45px; height: 45px; border-radius: 50%; background: white; color: var(--ink); display: grid; place-items: center; }
 .card-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: var(--muted); margin: 20px 0 12px; font-size: 12px; }
@@ -155,7 +155,7 @@ section[id], h2[id] { scroll-margin-top: 28px; }
 .studio-beliefs h3 { font-size: 25px; margin-bottom: 12px; }
 .studio-beliefs article p { color: var(--muted); font-size: 16px; }
 .theme-pixelheist { --accent: #8a561e; --accent-soft: #f5e9d2; }
-.theme-whereisit { --accent: var(--teal); --accent-soft: #d8eeea; }
+.theme-mapbop { --accent: var(--teal); --accent-soft: #d8eeea; }
 .game-hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; padding: 20px 0 56px; }
 .breadcrumb { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 12px; margin-bottom: 30px; }
 .breadcrumb a { display: flex; align-items: center; min-height: 32px; }
@@ -168,8 +168,8 @@ section[id], h2[id] { scroll-margin-top: 28px; }
 .alias { font-size: 12px; color: var(--muted); margin-top: 12px; }
 .game-keyart { height: 615px; border-radius: 180px 180px 20px 20px; overflow: hidden; position: relative; border: 9px solid white; background: var(--accent-soft); box-shadow: 0 16px 40px #192c4212; }
 .game-keyart>img { width: 100%; height: 100%; object-position: center top; }
-.whereisit .game-keyart { height: 560px; border-radius: 50% 50% 24px 24px; }
-.whereisit .game-keyart>img { object-position: center; }
+.mapbop .game-keyart { height: 560px; border-radius: 50% 50% 24px 24px; }
+.mapbop .game-keyart>img { object-position: center; }
 .keyart-caption { position: absolute; bottom: 18px; left: 18px; right: 18px; border-radius: 10px; background: #ffffffee; padding: 14px 17px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; font-weight: 600; }
 .keyart-caption .icon { color: var(--accent); }
 .stores { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px; }
@@ -240,7 +240,7 @@ section[id], h2[id] { scroll-margin-top: 28px; }
 .press-game { display: grid; grid-template-columns: 1fr 1fr; gap: 85px; padding: 50px 0 70px; border-top: 1px solid var(--line); }
 .press-cover { height: 280px; border-radius: 18px; overflow: hidden; margin-bottom: 28px; }
 .press-cover img { width: 100%; height: 100%; object-position: center 25%; }
-.press-cover.whereisit img { object-position: center; }
+.press-cover.mapbop img { object-position: center; }
 .press-title { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
 .press-icon { width: 52px; height: 52px; border-radius: 12px; }
 .press-title h2 { font-size: 36px; }
@@ -413,7 +413,7 @@ section[id], h2[id] { scroll-margin-top: 28px; }
   .game-hero h1 { font-size: 57px; }
   .game-tagline { font-size: 23px; }
   .game-keyart { height: 560px; border-radius: 120px 120px 18px 18px; }
-  .whereisit .game-keyart { height: 490px; }
+  .mapbop .game-keyart { height: 490px; }
   .game-jump-nav { gap: 24px; }
   .visual-story { gap: 30px; }
   .story-copy h2 { font-size: 29px; }
@@ -500,7 +500,7 @@ section[id], h2[id] { scroll-margin-top: 28px; }
   .game-tagline { font-size: 25px; }
   .game-hero .hero-description { max-width: 540px; }
   .game-keyart { width: 100%; height: 560px; max-width: 470px; justify-self: center; border-radius: 140px 140px 20px 20px; border-width: 7px; }
-  .whereisit .game-keyart { height: 430px; }
+  .mapbop .game-keyart { height: 430px; }
   .game-jump-nav { gap: 8px 22px; padding: 12px 0; }
   .game-jump-nav a { font-size: 12px; min-height: 36px; }
   .facts { grid-template-columns: 1fr 1fr; padding: 25px 0; gap: 26px 16px; }
@@ -617,7 +617,7 @@ section[id], h2[id] { scroll-margin-top: 28px; }
   .card-meta { font-size: 10px; }
   .game-hero h1 { font-size: 55px; }
   .game-keyart { height: 500px; }
-  .whereisit .game-keyart { height: 390px; }
+  .mapbop .game-keyart { height: 390px; }
   .shot-picture { height: 280px; padding: 8px; }
   .game-resources nav a { gap: 8px; }
   .support-address { font-size: 18px; }

@@ -6,7 +6,7 @@ import { appPrivacySections } from './store-privacy.mjs';
 import { publisher } from './store-profile.mjs';
 import { renderShell } from './shell.mjs';
 import { createUI, icon, escapeHTML } from './ui.mjs';
-export const routes=['','pixelheist/','whereisit/','about/','press/','support/','contact/','privacy/','terms/',...games.flatMap(g=>['support','contact','privacy','delete-data','privacy-choices','terms'].map(p=>`${g.id}/${p}/`))];
+export const routes=['','pixelheist/','mapbop/','about/','press/','support/','contact/','privacy/','terms/',...games.flatMap(g=>['support','contact','privacy','delete-data','privacy-choices','terms'].map(p=>`${g.id}/${p}/`))];
 export function render(route,lang='en'){
  const {en,pick,href,link,button}=createUI(lang),esc=escapeHTML,arrow=icon('external');
  const game=games.find(g=>route.startsWith(g.id+'/'));
@@ -26,7 +26,7 @@ export function render(route,lang='en'){
  else sections=[
  [pick('Web sitesi verileri','Website data'),pick('Bu site oyun tanıtımları ve destek bilgileri sunar. Site kodu analitik veya reklam izleyicisi, kullanıcı hesabı ya da form verisi toplama sistemi içermez. Dil değişimi farklı sayfa adresleriyle çalışır; tercih çerezi yazılmaz.','This site provides game information and support resources. The site code includes no analytics or advertising trackers, user accounts, or form collection system. Language switching uses separate page URLs and does not set a preference cookie.')],
  [pick('Barındırma ve dış bağlantılar','Hosting and external links'),pick('Barındırma hizmeti, siteyi sunmak ve güvenliğini sağlamak için IP adresi ve istek bilgileri gibi teknik günlükleri işleyebilir. Haricî mağaza ve servis bağlantılarını açtığında ilgili hizmetin gizlilik koşulları uygulanır.','The hosting provider may process technical logs, such as IP addresses and request information, to deliver and secure the site. External stores and services apply their own privacy terms when you open their links.')],
- [pick('Oyunlara ait politikalar','Game-specific policies'),`${link('pixelheist/privacy/','Pixel Heist →')}<br>${link('whereisit/privacy/','MapBop / WhereIsIt →')}`],
+ [pick('Oyunlara ait politikalar','Game-specific policies'),`${link('pixelheist/privacy/','Pixel Heist →')}<br>${link('mapbop/privacy/','MapBop →')}`],
  [pick('Destek yazışmaları','Support correspondence'),pick('E-posta ile destek istediğinde kendi gönderdiğin bilgiler talebin ele alınması amacıyla e-posta hizmet sağlayıcısı üzerinden işlenir. Yazışmalar ve silme talepleri, talep kapandıktan sonra en fazla 12 ay saklanır ve ardından silinir; yasal olarak tutulması gereken kayıtlar hariçtir. Erken silme için destek adresine yazabilirsin. Gereksiz kişisel bilgi, parola veya ödeme kartı bilgisi gönderme.','If you request support by email, the information you provide is processed through an email service provider to handle your request. Correspondence and deletion requests are retained for up to 12 months after closure and then deleted, except for records that must be kept by law. Contact support to request earlier deletion. Do not send unnecessary personal information, passwords, or payment card details.')]
  ];
  body=legalPage(title,sections,game);

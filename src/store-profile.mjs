@@ -26,7 +26,7 @@ export const appProfiles = {
     targetAudience: 'general; not specifically directed at children',
     retention: { analytics: null, purchases: 'Provider retention policies and legal obligations', support: 'Up to 12 months after closure, except legally required records', deletionRequests: 'Up to 12 months after closure, except legally required records' },
   },
-  whereisit: {
+  mapbop: {
     storeName: 'MapBop: Geography Game',
     releaseConfirmed: true,
     accounts: false,
