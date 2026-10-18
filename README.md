@@ -91,3 +91,37 @@ App Store için tüm uygulamalarda **Support URL** ve **Privacy Policy URL** ger
 | User Privacy Choices URL (isteğe bağlı) | `/pixelheist/privacy-choices/` | `/whereisit/privacy-choices/` |
 
 Türkçe yerelleştirme için bu adreslere `/tr` öneki eklenir. Mağazaya girilirken tüm adresler halka açık gerçek site origin’i ile birleştirilmelidir.
+
+## Tasarım yenilemesi — 18 Ekim 2026
+
+`frontend-design`, `ui-ux-pro-max` ve `web-design-guidelines` ile yeni görsel sistem uygulandı.
+Beceri aramasındaki siyah-beyaz/hareket yoğun öneri, resimli oyun dünyalarına uymadığı için seçilmedi.
+
+- Tuval `#edf2f6`, kâğıt `#ffffff`, metin `#192c42`, ikincil metin `#536579`, ana eylem `#354ed0`, altın vurgu `#f4cf74`.
+- Pixel Heist: eserleri ve gece müzesini destekleyen altın tonu. MapBop: ada/harita dünyasına uygun teal tonu.
+- Başlıklar yerel Bricolage Grotesque, gövde metinleri yerel DM Sans. OFL lisansları `assets/fonts/` içinde tutulur.
+- Ana odak: iki oyunun kapakları. Metinler, düğmeler ve kaynak bağlantıları bu odağa göre sade tutulur.
+- Ana sayfa düzeni: solda kısa tanıtım, sağda iki oyun kapağı; aşağıda oyun koleksiyonu, stüdyo ve yardım bağlantıları.
+- Oyun sayfaları: oyun kimliği ve kapak; oynanış/görsel anlatım; altı ekran; SSS ve oyuncu kaynakları.
+- Stüdyo: iki oyun dünyasının kolajı, oyun yaklaşımı ve mevcut oyunlar.
+- Destek/gizlilik: açık iletişim, okunabilir satır genişliği ve oyunlara özel kaynaklar.
+
+```text
+Ana sayfa
+[ logo          oyunlar / stüdyo / basın / destek       EN / TR ]
+[ kısa tanıtım ve ana eylem        Pixel Heist + MapBop kapakları ]
+[ oyun koleksiyonu                platform filtreleri           ]
+[ Pixel Heist                    MapBop                         ]
+[ stüdyo görseli                 oyun yaklaşımı                 ]
+[ destek                        basın kaynakları               ]
+[ oyunlar / destek / gizlilik bağlantıları                       ]
+```
+
+`src/ui.mjs` ortak SVG simgelerini ve UI yardımcılarını, `src/shell.mjs` site çerçevesini,
+`src/visual-pages.mjs` tanıtım sayfalarını, `src/pages.mjs` kaynak ve politika sayfalarını yönetir.
+Kök dil İngilizce, Türkçe `/tr/` olarak korunur. Filtreler `?platform=`, galeri seçimi `?image=` ile adreslenebilir.
+Galeride önceki/sonraki, yön tuşları, Escape, geri gezinme ve odak dönüşü desteklenir.
+
+Doğrulama: 55 HTML dosyasında bağlantılar, meta bilgiler, dil karşılıkları, görseller ve oyun kaynakları;
+375, 768, 1024 ve 1440 px genişliklerde ana sayfa, stüdyo, iki oyun, basın, destek ve gizlilik düzeni.
+Kontrol edilen ana renk çiftleri 4.5:1 metin kontrastını geçer. Hareket azaltma tercihi desteklenir.

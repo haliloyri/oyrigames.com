@@ -18,6 +18,10 @@ for(const file of pages){
   try {if((await stat(dest)).isDirectory())dest=resolve(dest,'index.html');await stat(dest);if(fragment&&dest.endsWith('.html')){const target=await readFile(dest,'utf8');if(!target.includes(`id="${fragment}"`))errors.push(`${file}: missing fragment ${value}`);}}
   catch{errors.push(`${file}: broken ${attribute} ${value}`);}
  }
+ for(const [img] of html.matchAll(/<img\b[^>]*>/g)) {
+  for(const attribute of ['alt','width','height'])if(!new RegExp(`\\b${attribute}=\"`).test(img))errors.push(`${file}: image missing ${attribute}`);
+ }
+ if(/<div[^>]+onclick=/i.test(html))errors.push(`${file}: non-semantic click target`);
  if(/YOUR E.MAIL|undefined|Lorem ipsum|TODO|\[PLACEHOLDER\]/i.test(html))errors.push(`${file}: unfinished content`);
 }
 for (const route of routes) {
