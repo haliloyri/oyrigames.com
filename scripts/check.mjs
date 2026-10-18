@@ -12,6 +12,7 @@ for(const file of pages){
  if(!/<meta name="description" content="[^"]+"/.test(html))errors.push(`${file}: missing description`);
  for(const [,attribute,value] of html.matchAll(/\b(href|src)="([^"]+)"/g)){
   if(value.startsWith('#')) { if(value.length>1&&!html.includes(`id="${value.slice(1)}"`))errors.push(`${file}: missing local fragment ${value}`);continue;}
+  if(value.startsWith('tel:')){if(!/^tel:\+[0-9]{7,15}$/.test(value))errors.push(`${file}: invalid telephone href ${value}`);continue;}
   if(/^(mailto:|https?:)/.test(value))continue;
   const [path,fragment]=value.split('#');
   let dest=path.startsWith('/')?resolve(root,'.'+path):resolve(dirname(file),path);
@@ -39,6 +40,13 @@ for (const game of games) {
  const html=await readFile(`${root}/${game.id}/index.html`,'utf8');
  if((html.match(/class="shot"/g)||[]).length!==6)errors.push(`${game.id}: expected six screenshots`);
  for(const section of ['overview','screenshots','how-to-play'])if(!html.includes(`id="${section}"`))errors.push(`${game.id}: missing game section ${section}`);
- for(const page of ['support','privacy','privacy-choices','delete-data','terms'])if(!html.includes(`href="/${game.id}/${page}/"`))errors.push(`${game.id}: missing ${page} resource`);
+ for(const page of ['support','contact','privacy','privacy-choices','delete-data','terms'])if(!html.includes(`href="/${game.id}/${page}/"`))errors.push(`${game.id}: missing ${page} resource`);
+}
+for(const game of games) {
+ for(const lang of ['en','tr']) for(const resource of ['support','contact','privacy','privacy-choices','delete-data','terms']) {
+  const path=`${root}/${lang==='tr'?'tr/':''}${game.id}/${resource}/index.html`;
+  const html=await readFile(path,'utf8');
+  if(!html.includes(game.name)||!html.includes(site.supportEmail))errors.push(`${path}: missing app identification or contact email`);
+ }
 }
 if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}else console.log(`Checked ${pages.length} HTML pages: internal links, fragments, images, headings, languages, canonical URLs, language switchers, game galleries and metadata passed.`);

@@ -52,7 +52,7 @@ Mağaza adresleri doğrulanmadığından `null` tutulur ve ziyaretçiye “bağl
 
 WhereIsIt klasöründeki güncel `mobile/app.json`, README ve mağaza listesi **MapBop** markasını kullanır. URL proje adıyla korunmuştur; eski ekran görüntülerindeki WhereIsIt adı sayfada açıklanır.
 
-Pixel Heist gizlilik açıklaması mevcut geliştirme sürümüne dayanır: yerel kayıtlar ve simüle edilmiş reklam/satın alma sağlayıcıları. MapBop metni mevcut servis kodları ve depo gizlilik taslağına dayanır; analitik/reklam/satın alma yapılandırmalarının sürüme bağlı olduğu açıklanır. Gerçek mağaza sürümünden önce sağlayıcılar, veri kategorileri, saklama süreleri ve iletişim adresi o sürümle eşleştirilmelidir. Metinler mağaza onayı alındığı iddiası değildir.
+Gizlilik sayfaları, yayıncının bildirdiği mağaza sürümü planını temel alır: hesap/giriş, bulut kayıt ve ayrı oyun analitiği yok; reklam var. Reklam/mağaza verileri yerel oyun kayıtlarından ayrıdır. Her iki oyunda uygulama içi satın alma ve abonelik bulunacak; genel kitle hedefleniyor ve özellikle çocuklar için tasarlanmıyor. Destek yazışmaları ve silme talebi kayıtları, talep kapandıktan sonra en fazla 12 ay saklanır; yasal kayıt yükümlülükleri hariçtir. Metinler mağaza onayı alındığı iddiası değildir.
 
 Özel önizleme yayını mağazaların halka açık destek/gizlilik URL’lerinin yerine kullanılamaz. `oyrigames.com` üzerinden halka açık yayına geçildiğinde `site.origin` değiştirilip yeniden derlenmeli ve hosting erişimi uygun şekilde ayarlanmalıdır. Bu görev özel alan adı veya DNS ayarı yapmaz.
 
@@ -125,3 +125,46 @@ Galeride önceki/sonraki, yön tuşları, Escape, geri gezinme ve odak dönüş�
 Doğrulama: 55 HTML dosyasında bağlantılar, meta bilgiler, dil karşılıkları, görseller ve oyun kaynakları;
 375, 768, 1024 ve 1440 px genişliklerde ana sayfa, stüdyo, iki oyun, basın, destek ve gizlilik düzeni.
 Kontrol edilen ana renk çiftleri 4.5:1 metin kontrastını geçer. Hareket azaltma tercihi desteklenir.
+
+## Mağaza iletişim sayfaları
+
+İngilizce sayfalar kök dizinde, Türkçe karşılıkları `/tr/` altındadır.
+
+| Amaç | Pixel Heist | MapBop |
+| --- | --- | --- |
+| Support URL (App Store) | `/pixelheist/support/` | `/whereisit/support/` |
+| Geliştirici iletişim | `/pixelheist/contact/` | `/whereisit/contact/` |
+| Privacy Policy URL (her iki mağaza) | `/pixelheist/privacy/` | `/whereisit/privacy/` |
+| User Privacy Choices (Apple’da isteğe bağlı) | `/pixelheist/privacy-choices/` | `/whereisit/privacy-choices/` |
+| Veri silme açıklamaları | `/pixelheist/delete-data/` | `/whereisit/delete-data/` |
+| Kullanım/satın alma bilgileri | `/pixelheist/terms/` | `/whereisit/terms/` |
+| Marketing URL | `/pixelheist/` | `/whereisit/` |
+
+Tablodaki yolların kalıcı alan adı `https://oyrigames.com` olacaktır. Genel geliştirici iletişimi `/contact/` adresindedir. Destek/gizlilik sayfaları oyun adını ve e-posta adresini içerir.
+E-posta bağlantıları yalnızca kullanıcının posta uygulamasını açar; bir talebin gönderildiği veya verinin silindiği iddia edilmez.
+
+`src/store-profile.mjs` mağazaya gönderilecek sürüme ilişkin sahibi tarafından doğrulanması gereken bilgileri tutar.
+Yayıncı Esra Oyri (Türkiye), telefon ve adres bilgilerini kamuya açık site için sağladı; support@oyrigames.com posta kutusunun etkinliğini doğruladı. Kalıcı adres https://oyrigames.com olarak ayarlandı. Hesap/giriş yok, reklam var, ayrı analitik ve bulut kayıt yok. Her iki oyun için uygulama içi satın alma ve abonelik, genel kitle hedefi (özellikle çocuklara yönelik değil) ve talep kapandıktan sonra en fazla 12 aylık destek/silme talebi saklama süresi sahibi tarafından onaylandı. Yasal saklama gereklilikleri hariç tutulur. Reklam/mağaza kayıtları sağlayıcı kurallarına tabidir.
+
+Alan adı HTTPS kontrolünde DNS çözülemedi. Mağazaya URL verilmeden önce alan adının doğru barındırmaya bağlanması, HTTPS ve tüm oyun sayfalarının kamuya açık erişimi doğrulanmalıdır.
+
+Önemli uygulama eşleştirmesi: Pixel Heist deposundaki ticaret sağlayıcısı inceleme sırasında test/simülasyon sağlayıcısıydı; gerçek reklam/ödeme entegrasyonu gönderilen uygulamada doğrulanmalıdır. MapBop kodunda isteğe bağlı PostHog entegrasyonu mevcut; analitik kullanılmayacağı bildirildiğinden mağaza sürümünde devre dışı olduğu doğrulanmalıdır. MapBop satın alma servisi RevenueCat içeriyor. Bu web sitesi işi oyun projelerinin kodunu değiştirmez.
+
+`npm run check` yerel site bütünlüğünü; `npm run check:store` ise mağaza hazırlığı için eksik bilgileri denetler.
+İkinci komut, kamuya açık HTTPS erişimi ve gönderilen uygulama sürümlerinin beyanlarla eşleşmesi doğrulanana kadar bilinçli olarak başarısız olur. Hiçbir kontrol mağaza onayı garantisi değildir.
+
+Web sayfaları, mağaza konsolundaki App Privacy/Data safety beyanlarının veya uygulama içi yükümlülüklerin yerini almaz.
+Hesap oluşturma eklenirse Apple uygulama içinde silmeyi başlatma olanağı ister; Google Play ise uygulama içi ve dışarıdan erişilen bir silme yolu ister.
+Bireysel geliştiricinin App Review ekibine konsolda verdiği özel inceleme iletişim bilgileri, kamuya açık web iletişiminden ayrıdır.
+Kişisel telefon/adres yalnızca yayımlanması istenirse siteye eklenir; mağaza hesabı ve bölgesel trader bilgileri ilgili konsolda ayrıca değerlendirilir.
+
+Kaynaklar:
+- https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information/
+- https://support.google.com/googleplay/android-developer/answer/10144311?hl=en
+- https://support.google.com/googleplay/android-developer/answer/13327111?hl=en
+- https://developer.apple.com/help/app-review/guideline-reference/5-1-1-account-deletion
+
+Abonelik yönetimi kaynakları:
+- https://support.apple.com/en-us/118428
+- https://support.google.com/googleplay/answer/7018481?hl=en
+- https://developer.apple.com/app-store/subscriptions/

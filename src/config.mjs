@@ -1,6 +1,6 @@
 // Confirm these values before public release. Null store URLs render release status.
 export const site = {
-  name: 'Oyri Games', origin: 'https://oyri-games.haliloyri.chatgpt.site',
+  name: 'Oyri Games', origin: 'https://oyrigames.com',
   supportEmail: 'support@oyrigames.com',
   updated: '2026-10-18',
 };

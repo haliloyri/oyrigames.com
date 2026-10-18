@@ -631,3 +631,38 @@ section[id], h2[id] { scroll-margin-top: 28px; }
 }
 html { scrollbar-gutter: stable; }
 html.modal-open { overflow: hidden; }
+/* Public developer and per-app contact information. */
+.contact-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 70px; padding-bottom: 55px; }
+.contact-details { padding: 36px; border-radius: 20px; background: var(--paper); align-self: start; }
+.contact-details h2 { font-size: 34px; margin-bottom: 24px; }
+.contact-details dl { margin: 0 0 28px; }
+.contact-details dl>div { padding: 16px 0; border-top: 1px solid var(--line); }
+.contact-details dt { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.contact-details dd { margin: 0; font-size: 17px; line-height: 1.7; overflow-wrap: anywhere; white-space: pre-line; }
+.contact-details dd a { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
+.contact-email-note { font-size: 13px; color: var(--muted); margin-top: 20px; }
+.contact-help h2 { font-size: 32px; margin-bottom: 20px; }
+.contact-help nav { display: grid; margin-bottom: 32px; }
+.contact-help nav a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.contact-help nav a:hover { color: var(--blue); }
+.contact-help h3 { font-size: 24px; }
+.contact-help ul { padding-left: 20px; color: var(--muted); font-size: 15px; line-height: 1.9; }
+.contact-help>p { color: var(--muted); font-size: 14px; }
+.contact-privacy { border-top: 1px solid var(--line); }
+.contact-privacy h2 { margin-bottom: 24px; }
+.contact-privacy>p { color: var(--muted); max-width: 68ch; }
+.contact-privacy .text-link { margin-top: 18px; }
+.support-tip .text-link { display: flex; }
+@media(max-width:760px) {
+ .contact-layout { grid-template-columns: 1fr; gap: 35px; padding-bottom: 40px; }
+ .contact-details { padding: 26px; }
+ .contact-details h2 { font-size: 30px; }
+ .contact-details dd { font-size: 16px; }
+ .contact-help h2 { font-size: 30px; }
+ .contact-help nav a, .contact-help ul { font-size: 16px; }
+}
+
+.publisher-summary { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.publisher-summary p { margin: .6rem 0; overflow-wrap: anywhere; }
+.publisher-summary a { text-underline-offset: .2em; }
+.contact-details dd { overflow-wrap: anywhere; }
